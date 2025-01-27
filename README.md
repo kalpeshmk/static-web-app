@@ -4,6 +4,7 @@ This guide provides step-by-step instructions for setting up and deploying the a
 
 ## Phase 1: Create Infrastructure using Terraform
 - Use `aws configure` to set up aws credentials for terraform
+- [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 1. **Create jenkins server**
     - Create jenkins server and its all components using terraform
 2. **Create Bastion-EKS Cluster**
@@ -184,7 +185,7 @@ sudo systemctl restart jenkins  # Restart Jenkins Server
 
 ### Step: Run Jenkins Pipeline
 
-1. Run pipleine with Jenkinsfile
+1. Run pipleine with `Jenkinsfile` from codebase.
 2. Run with `github webhook trigger` which automatically triggered form github webhook
 
 ### DockerHub (Container Image Repo)
@@ -229,7 +230,7 @@ sudo systemctl restart jenkins  # Restart Jenkins Server
 
 4. **Access your Application:**
 
-   - Access the app through the LoadBalancer address which was mentioned in `step 1`.
+   - Access the static-app through the LoadBalancer address `kubectl get svc -n app`
 
     ![APP](images/app.png)
 
